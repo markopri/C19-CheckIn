@@ -1,0 +1,6 @@
+framework module Pods_C19_CheckINTests {
+  umbrella header "Pods-C19-CheckINTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

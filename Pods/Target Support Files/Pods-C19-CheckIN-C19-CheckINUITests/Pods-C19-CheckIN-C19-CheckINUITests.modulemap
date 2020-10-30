@@ -1,0 +1,6 @@
+framework module Pods_C19_CheckIN_C19_CheckINUITests {
+  umbrella header "Pods-C19-CheckIN-C19-CheckINUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
