@@ -10,7 +10,6 @@
 		397B8AA8EC5FDB7A9525436B /* Pods_C19_CheckINTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12142F354425F97B23FEA6F8 /* Pods_C19_CheckINTests.framework */; };
 		5FEB1EB318C051B1C421E60F /* Pods_C19_CheckIN_C19_CheckINUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF07DC4E88125C7FEE84E51E /* Pods_C19_CheckIN_C19_CheckINUITests.framework */; };
 		921EBBB7254C115400B91740 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921EBBB6254C115400B91740 /* AppDelegate.swift */; };
-		921EBBBB254C115400B91740 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921EBBBA254C115400B91740 /* ViewController.swift */; };
 		921EBBBE254C115400B91740 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 921EBBBC254C115400B91740 /* Main.storyboard */; };
 		921EBBC0254C115600B91740 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 921EBBBF254C115600B91740 /* Assets.xcassets */; };
 		921EBBC3254C115600B91740 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 921EBBC1254C115600B91740 /* LaunchScreen.storyboard */; };
@@ -25,6 +24,12 @@
 		921EBC31254DB28400B91740 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921EBC30254DB28400B91740 /* LoadingViewController.swift */; };
 		921EBC36254DB29600B91740 /* BlockerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921EBC35254DB29600B91740 /* BlockerViewController.swift */; };
 		921EBC3C254DB4CD00B91740 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921EBC3B254DB4CD00B91740 /* Reachability.swift */; };
+		921EBC4B254DD23800B91740 /* SelectAppModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921EBC49254DD23800B91740 /* SelectAppModeViewController.swift */; };
+		921EBC4C254DD23800B91740 /* SelectAppModeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 921EBC4A254DD23800B91740 /* SelectAppModeViewController.xib */; };
+		921EBC52254DDD0600B91740 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921EBC51254DDD0600B91740 /* UIButton.swift */; };
+		921EBC5A254DE09500B91740 /* IntroCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921EBC59254DE09500B91740 /* IntroCoordinator.swift */; };
+		921EBC66254DEB6600B91740 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921EBC64254DEB6600B91740 /* LoginViewController.swift */; };
+		921EBC67254DEB6600B91740 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 921EBC65254DEB6600B91740 /* LoginViewController.xib */; };
 		D646C03D675309801D3E76E9 /* Pods_C19_CheckIN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 090637E86B859CDC101DFEF2 /* Pods_C19_CheckIN.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,7 +57,6 @@
 		756ACF96A6E92ACA02A9EB67 /* Pods-C19-CheckIN-C19-CheckINUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-C19-CheckIN-C19-CheckINUITests.debug.xcconfig"; path = "Target Support Files/Pods-C19-CheckIN-C19-CheckINUITests/Pods-C19-CheckIN-C19-CheckINUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		921EBBB3254C115400B91740 /* C19-CheckIN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "C19-CheckIN.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		921EBBB6254C115400B91740 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		921EBBBA254C115400B91740 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		921EBBBD254C115400B91740 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		921EBBBF254C115600B91740 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		921EBBC2254C115600B91740 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -72,6 +76,12 @@
 		921EBC30254DB28400B91740 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		921EBC35254DB29600B91740 /* BlockerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockerViewController.swift; sourceTree = "<group>"; };
 		921EBC3B254DB4CD00B91740 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		921EBC49254DD23800B91740 /* SelectAppModeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAppModeViewController.swift; sourceTree = "<group>"; };
+		921EBC4A254DD23800B91740 /* SelectAppModeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectAppModeViewController.xib; sourceTree = "<group>"; };
+		921EBC51254DDD0600B91740 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		921EBC59254DE09500B91740 /* IntroCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroCoordinator.swift; sourceTree = "<group>"; };
+		921EBC64254DEB6600B91740 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		921EBC65254DEB6600B91740 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		9585FAF8EA3AA2E25BF7BA6B /* Pods-C19-CheckIN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-C19-CheckIN.debug.xcconfig"; path = "Target Support Files/Pods-C19-CheckIN/Pods-C19-CheckIN.debug.xcconfig"; sourceTree = "<group>"; };
 		BB1072CF4C1B85B013077997 /* Pods-C19-CheckIN-C19-CheckINUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-C19-CheckIN-C19-CheckINUITests.release.xcconfig"; path = "Target Support Files/Pods-C19-CheckIN-C19-CheckINUITests/Pods-C19-CheckIN-C19-CheckINUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CE4302CDC7012C5CE65BC4E2 /* Pods-C19-CheckINTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-C19-CheckINTests.debug.xcconfig"; path = "Target Support Files/Pods-C19-CheckINTests/Pods-C19-CheckINTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -151,7 +161,6 @@
 				921EBC21254C978200B91740 /* View Controllers */,
 				921EBC14254C96C400B91740 /* Resources */,
 				921EBC15254C96C400B91740 /* Supporting Files */,
-				921EBBBA254C115400B91740 /* ViewController.swift */,
 				921EBBC4254C115600B91740 /* Info.plist */,
 			);
 			path = "C19-CheckIN";
@@ -189,6 +198,7 @@
 				921EBBF8254C232500B91740 /* AppCoordinator.swift */,
 				921EBC07254C8FBA00B91740 /* Coordinator.swift */,
 				921EBC0F254C906700B91740 /* RootViewCoordinator.swift */,
+				921EBC59254DE09500B91740 /* IntroCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -213,6 +223,7 @@
 		921EBC15254C96C400B91740 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				921EBC50254DDCF900B91740 /* Extensions */,
 				921EBC3A254DB49A00B91740 /* External */,
 				921EBC22254C9E9800B91740 /* Enumerations */,
 				921EBC16254C96DC00B91740 /* Constants.swift */,
@@ -226,6 +237,8 @@
 				921EBC2B254DAF0100B91740 /* BaseViewController.swift */,
 				921EBC30254DB28400B91740 /* LoadingViewController.swift */,
 				921EBC35254DB29600B91740 /* BlockerViewController.swift */,
+				921EBC46254DD22600B91740 /* Select App Mode */,
+				921EBC61254DEB3300B91740 /* Login */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -244,6 +257,64 @@
 				921EBC3B254DB4CD00B91740 /* Reachability.swift */,
 			);
 			path = External;
+			sourceTree = "<group>";
+		};
+		921EBC46254DD22600B91740 /* Select App Mode */ = {
+			isa = PBXGroup;
+			children = (
+				921EBC47254DD22600B91740 /* Controller */,
+				921EBC48254DD22600B91740 /* Model */,
+			);
+			path = "Select App Mode";
+			sourceTree = "<group>";
+		};
+		921EBC47254DD22600B91740 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				921EBC49254DD23800B91740 /* SelectAppModeViewController.swift */,
+				921EBC4A254DD23800B91740 /* SelectAppModeViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		921EBC48254DD22600B91740 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		921EBC50254DDCF900B91740 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				921EBC51254DDD0600B91740 /* UIButton.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		921EBC61254DEB3300B91740 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				921EBC62254DEB4B00B91740 /* Controller */,
+				921EBC63254DEB4B00B91740 /* Model */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		921EBC62254DEB4B00B91740 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				921EBC64254DEB6600B91740 /* LoginViewController.swift */,
+				921EBC65254DEB6600B91740 /* LoginViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		921EBC63254DEB4B00B91740 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		EA0A5722154A35A0683BB144 /* Frameworks */ = {
@@ -364,7 +435,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				921EBC67254DEB6600B91740 /* LoginViewController.xib in Resources */,
 				921EBBC3254C115600B91740 /* LaunchScreen.storyboard in Resources */,
+				921EBC4C254DD23800B91740 /* SelectAppModeViewController.xib in Resources */,
 				921EBBC0254C115600B91740 /* Assets.xcassets in Resources */,
 				921EBBBE254C115400B91740 /* Main.storyboard in Resources */,
 			);
@@ -494,10 +567,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				921EBC66254DEB6600B91740 /* LoginViewController.swift in Sources */,
 				921EBC08254C8FBA00B91740 /* Coordinator.swift in Sources */,
+				921EBC52254DDD0600B91740 /* UIButton.swift in Sources */,
 				921EBBF9254C232500B91740 /* AppCoordinator.swift in Sources */,
 				921EBC24254C9EC200B91740 /* ApplicationModeType.swift in Sources */,
-				921EBBBB254C115400B91740 /* ViewController.swift in Sources */,
+				921EBC4B254DD23800B91740 /* SelectAppModeViewController.swift in Sources */,
 				921EBC10254C906700B91740 /* RootViewCoordinator.swift in Sources */,
 				921EBC31254DB28400B91740 /* LoadingViewController.swift in Sources */,
 				921EBC2C254DAF0100B91740 /* BaseViewController.swift in Sources */,
@@ -505,6 +580,7 @@
 				921EBBB7254C115400B91740 /* AppDelegate.swift in Sources */,
 				921EBC17254C96DC00B91740 /* Constants.swift in Sources */,
 				921EBC36254DB29600B91740 /* BlockerViewController.swift in Sources */,
+				921EBC5A254DE09500B91740 /* IntroCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

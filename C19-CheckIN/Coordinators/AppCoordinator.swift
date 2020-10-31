@@ -10,12 +10,17 @@ import UIKit
 
 class AppCoordinator: RootViewCoordinator {
 	var childCoordinators: [Coordinator] = []
+	var selectAppModeCoordinator: IntroCoordinator
+	var introCoordinator: IntroCoordinator
 
 	let window: UIWindow
 	var rootViewController: UIViewController = UINavigationController()
 
 	public init(window: UIWindow) {
 		self.window = window
+		selectAppModeCoordinator = IntroCoordinator()
+		introCoordinator = IntroCoordinator()
+
 		self.window.rootViewController = rootViewController
 		self.window.makeKeyAndVisible()
 	}
@@ -24,11 +29,44 @@ class AppCoordinator: RootViewCoordinator {
 	public func start() {
 		let isSelectedModeType = UserDefaults.standard.bool(forKey: UserDefaultsKey.kIsSelectedModeType)
 		if isSelectedModeType {
-			//TODO: determine which user type is and depending on that show right screen
+			let selectedModeType = UserDefaults.standard.value(forKey: UserDefaultsKey.kSelectedApplicationModeType) as! String
+			if selectedModeType == ApplicationModeType.admin.rawValue {
+				//TODO: redirect to screen for admin entering data for device
+			} else {
+				showLoginViewController()
+			}
 		} else {
-			//TODO: go to screen to select mode in which application will work
+			showSelectAppModeViewController()
 		}
-		self.rootViewController = UINavigationController(rootViewController: ViewController())
-		UIApplication.shared.windows.first?.rootViewController = self.rootViewController
+	}
+
+	func showSelectAppModeViewController() {
+		self.childCoordinators.removeAll()
+		self.rootViewController = UINavigationController()
+		self.window.rootViewController = self.rootViewController
+		selectAppModeCoordinator.delegate = self
+		selectAppModeCoordinator.startSelectAppMode()
+		self.addChildCoordinator(selectAppModeCoordinator)
+		self.rootViewController.present(selectAppModeCoordinator.rootViewController, animated: false, completion: nil)
+	}
+
+	func showLoginViewController() {
+		self.childCoordinators.removeAll()
+		self.rootViewController = UINavigationController()
+		self.window.rootViewController = self.rootViewController
+		introCoordinator.delegate = self
+		introCoordinator.startLogin()
+		self.addChildCoordinator(introCoordinator)
+		self.rootViewController.present(introCoordinator.rootViewController, animated: false, completion: nil)
+	}
+}
+
+extension AppCoordinator: IntroCoordinatorDelegate {
+	func selectedAppMode(_ selectedAppMode: ApplicationModeType) {
+		if selectedAppMode == .admin {
+			//TODO: redirect to screen for admin entering data for device
+		} else {
+			showLoginViewController()
+		}
 	}
 }

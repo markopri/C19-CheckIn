@@ -7,8 +7,8 @@
 
 import Foundation
 
-enum ApplicationModeType {
-	case admin
-	case user
+public enum ApplicationModeType: String {
+	case admin = "admin"
+	case user = "user"
 }
 
