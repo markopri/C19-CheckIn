@@ -20,7 +20,14 @@ class AppCoordinator: RootViewCoordinator {
 		self.window.makeKeyAndVisible()
 	}
 
+	///Starts the coordinator
 	public func start() {
+		let isSelectedModeType = UserDefaults.standard.bool(forKey: UserDefaultsKey.kIsSelectedModeType)
+		if isSelectedModeType {
+			//TODO: determine which user type is and depending on that show right screen
+		} else {
+			//TODO: go to screen to select mode in which application will work
+		}
 		self.rootViewController = UINavigationController(rootViewController: ViewController())
 		UIApplication.shared.windows.first?.rootViewController = self.rootViewController
 	}

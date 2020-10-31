@@ -19,6 +19,12 @@
 		921EBBF9254C232500B91740 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921EBBF8254C232500B91740 /* AppCoordinator.swift */; };
 		921EBC08254C8FBA00B91740 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921EBC07254C8FBA00B91740 /* Coordinator.swift */; };
 		921EBC10254C906700B91740 /* RootViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921EBC0F254C906700B91740 /* RootViewCoordinator.swift */; };
+		921EBC17254C96DC00B91740 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921EBC16254C96DC00B91740 /* Constants.swift */; };
+		921EBC24254C9EC200B91740 /* ApplicationModeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921EBC23254C9EC200B91740 /* ApplicationModeType.swift */; };
+		921EBC2C254DAF0100B91740 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921EBC2B254DAF0100B91740 /* BaseViewController.swift */; };
+		921EBC31254DB28400B91740 /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921EBC30254DB28400B91740 /* LoadingViewController.swift */; };
+		921EBC36254DB29600B91740 /* BlockerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921EBC35254DB29600B91740 /* BlockerViewController.swift */; };
+		921EBC3C254DB4CD00B91740 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921EBC3B254DB4CD00B91740 /* Reachability.swift */; };
 		D646C03D675309801D3E76E9 /* Pods_C19_CheckIN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 090637E86B859CDC101DFEF2 /* Pods_C19_CheckIN.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +66,12 @@
 		921EBBF8254C232500B91740 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		921EBC07254C8FBA00B91740 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		921EBC0F254C906700B91740 /* RootViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewCoordinator.swift; sourceTree = "<group>"; };
+		921EBC16254C96DC00B91740 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		921EBC23254C9EC200B91740 /* ApplicationModeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationModeType.swift; sourceTree = "<group>"; };
+		921EBC2B254DAF0100B91740 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		921EBC30254DB28400B91740 /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		921EBC35254DB29600B91740 /* BlockerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockerViewController.swift; sourceTree = "<group>"; };
+		921EBC3B254DB4CD00B91740 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		9585FAF8EA3AA2E25BF7BA6B /* Pods-C19-CheckIN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-C19-CheckIN.debug.xcconfig"; path = "Target Support Files/Pods-C19-CheckIN/Pods-C19-CheckIN.debug.xcconfig"; sourceTree = "<group>"; };
 		BB1072CF4C1B85B013077997 /* Pods-C19-CheckIN-C19-CheckINUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-C19-CheckIN-C19-CheckINUITests.release.xcconfig"; path = "Target Support Files/Pods-C19-CheckIN-C19-CheckINUITests/Pods-C19-CheckIN-C19-CheckINUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CE4302CDC7012C5CE65BC4E2 /* Pods-C19-CheckINTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-C19-CheckINTests.debug.xcconfig"; path = "Target Support Files/Pods-C19-CheckINTests/Pods-C19-CheckINTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -136,8 +148,10 @@
 				921EBC06254C8EE900B91740 /* Storyboards */,
 				921EBBF7254C231000B91740 /* Coordinators */,
 				921EBBF6254C231000B91740 /* Core */,
+				921EBC21254C978200B91740 /* View Controllers */,
+				921EBC14254C96C400B91740 /* Resources */,
+				921EBC15254C96C400B91740 /* Supporting Files */,
 				921EBBBA254C115400B91740 /* ViewController.swift */,
-				921EBBBF254C115600B91740 /* Assets.xcassets */,
 				921EBBC4254C115600B91740 /* Info.plist */,
 			);
 			path = "C19-CheckIN";
@@ -186,6 +200,50 @@
 				921EBBC1254C115600B91740 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		921EBC14254C96C400B91740 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				921EBBBF254C115600B91740 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		921EBC15254C96C400B91740 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				921EBC3A254DB49A00B91740 /* External */,
+				921EBC22254C9E9800B91740 /* Enumerations */,
+				921EBC16254C96DC00B91740 /* Constants.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		921EBC21254C978200B91740 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				921EBC2B254DAF0100B91740 /* BaseViewController.swift */,
+				921EBC30254DB28400B91740 /* LoadingViewController.swift */,
+				921EBC35254DB29600B91740 /* BlockerViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		921EBC22254C9E9800B91740 /* Enumerations */ = {
+			isa = PBXGroup;
+			children = (
+				921EBC23254C9EC200B91740 /* ApplicationModeType.swift */,
+			);
+			path = Enumerations;
+			sourceTree = "<group>";
+		};
+		921EBC3A254DB49A00B91740 /* External */ = {
+			isa = PBXGroup;
+			children = (
+				921EBC3B254DB4CD00B91740 /* Reachability.swift */,
+			);
+			path = External;
 			sourceTree = "<group>";
 		};
 		EA0A5722154A35A0683BB144 /* Frameworks */ = {
@@ -438,9 +496,15 @@
 			files = (
 				921EBC08254C8FBA00B91740 /* Coordinator.swift in Sources */,
 				921EBBF9254C232500B91740 /* AppCoordinator.swift in Sources */,
+				921EBC24254C9EC200B91740 /* ApplicationModeType.swift in Sources */,
 				921EBBBB254C115400B91740 /* ViewController.swift in Sources */,
 				921EBC10254C906700B91740 /* RootViewCoordinator.swift in Sources */,
+				921EBC31254DB28400B91740 /* LoadingViewController.swift in Sources */,
+				921EBC2C254DAF0100B91740 /* BaseViewController.swift in Sources */,
+				921EBC3C254DB4CD00B91740 /* Reachability.swift in Sources */,
 				921EBBB7254C115400B91740 /* AppDelegate.swift in Sources */,
+				921EBC17254C96DC00B91740 /* Constants.swift in Sources */,
+				921EBC36254DB29600B91740 /* BlockerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

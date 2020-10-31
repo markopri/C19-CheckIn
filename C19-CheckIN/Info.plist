@@ -20,6 +20,10 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>We need to use BLE in order to app work correctly</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>We need to use BLE in order to app work correctly</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
