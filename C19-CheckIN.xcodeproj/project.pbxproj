@@ -30,6 +30,12 @@
 		921EBC5A254DE09500B91740 /* IntroCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921EBC59254DE09500B91740 /* IntroCoordinator.swift */; };
 		921EBC66254DEB6600B91740 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921EBC64254DEB6600B91740 /* LoginViewController.swift */; };
 		921EBC67254DEB6600B91740 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 921EBC65254DEB6600B91740 /* LoginViewController.xib */; };
+		92854859254ED777001F2B68 /* LoginLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92854858254ED777001F2B68 /* LoginLogicController.swift */; };
+		9285485E254ED7A9001F2B68 /* LoginState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9285485D254ED7A9001F2B68 /* LoginState.swift */; };
+		92854866254EEF9F001F2B68 /* RegistrationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92854865254EEF9F001F2B68 /* RegistrationState.swift */; };
+		9285486C254EEFC7001F2B68 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9285486A254EEFC7001F2B68 /* RegistrationViewController.swift */; };
+		9285486D254EEFC7001F2B68 /* RegistrationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9285486B254EEFC7001F2B68 /* RegistrationViewController.xib */; };
+		92854872254EEFD5001F2B68 /* RegistrationLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92854871254EEFD5001F2B68 /* RegistrationLogicController.swift */; };
 		D646C03D675309801D3E76E9 /* Pods_C19_CheckIN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 090637E86B859CDC101DFEF2 /* Pods_C19_CheckIN.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +88,12 @@
 		921EBC59254DE09500B91740 /* IntroCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroCoordinator.swift; sourceTree = "<group>"; };
 		921EBC64254DEB6600B91740 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		921EBC65254DEB6600B91740 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		92854858254ED777001F2B68 /* LoginLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginLogicController.swift; sourceTree = "<group>"; };
+		9285485D254ED7A9001F2B68 /* LoginState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginState.swift; sourceTree = "<group>"; };
+		92854865254EEF9F001F2B68 /* RegistrationState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationState.swift; sourceTree = "<group>"; };
+		9285486A254EEFC7001F2B68 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		9285486B254EEFC7001F2B68 /* RegistrationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistrationViewController.xib; sourceTree = "<group>"; };
+		92854871254EEFD5001F2B68 /* RegistrationLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationLogicController.swift; sourceTree = "<group>"; };
 		9585FAF8EA3AA2E25BF7BA6B /* Pods-C19-CheckIN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-C19-CheckIN.debug.xcconfig"; path = "Target Support Files/Pods-C19-CheckIN/Pods-C19-CheckIN.debug.xcconfig"; sourceTree = "<group>"; };
 		BB1072CF4C1B85B013077997 /* Pods-C19-CheckIN-C19-CheckINUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-C19-CheckIN-C19-CheckINUITests.release.xcconfig"; path = "Target Support Files/Pods-C19-CheckIN-C19-CheckINUITests/Pods-C19-CheckIN-C19-CheckINUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CE4302CDC7012C5CE65BC4E2 /* Pods-C19-CheckINTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-C19-CheckINTests.debug.xcconfig"; path = "Target Support Files/Pods-C19-CheckINTests/Pods-C19-CheckINTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -238,6 +250,7 @@
 				921EBC30254DB28400B91740 /* LoadingViewController.swift */,
 				921EBC35254DB29600B91740 /* BlockerViewController.swift */,
 				921EBC46254DD22600B91740 /* Select App Mode */,
+				92854862254EEDC0001F2B68 /* Registration */,
 				921EBC61254DEB3300B91740 /* Login */,
 			);
 			path = "View Controllers";
@@ -306,6 +319,7 @@
 			children = (
 				921EBC64254DEB6600B91740 /* LoginViewController.swift */,
 				921EBC65254DEB6600B91740 /* LoginViewController.xib */,
+				92854858254ED777001F2B68 /* LoginLogicController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -313,6 +327,34 @@
 		921EBC63254DEB4B00B91740 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				9285485D254ED7A9001F2B68 /* LoginState.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		92854862254EEDC0001F2B68 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				92854863254EEDC0001F2B68 /* Controller */,
+				92854864254EEDC0001F2B68 /* Model */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		92854863254EEDC0001F2B68 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9285486A254EEFC7001F2B68 /* RegistrationViewController.swift */,
+				9285486B254EEFC7001F2B68 /* RegistrationViewController.xib */,
+				92854871254EEFD5001F2B68 /* RegistrationLogicController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		92854864254EEDC0001F2B68 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				92854865254EEF9F001F2B68 /* RegistrationState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -438,6 +480,7 @@
 				921EBC67254DEB6600B91740 /* LoginViewController.xib in Resources */,
 				921EBBC3254C115600B91740 /* LaunchScreen.storyboard in Resources */,
 				921EBC4C254DD23800B91740 /* SelectAppModeViewController.xib in Resources */,
+				9285486D254EEFC7001F2B68 /* RegistrationViewController.xib in Resources */,
 				921EBBC0254C115600B91740 /* Assets.xcassets in Resources */,
 				921EBBBE254C115400B91740 /* Main.storyboard in Resources */,
 			);
@@ -572,13 +615,18 @@
 				921EBC52254DDD0600B91740 /* UIButton.swift in Sources */,
 				921EBBF9254C232500B91740 /* AppCoordinator.swift in Sources */,
 				921EBC24254C9EC200B91740 /* ApplicationModeType.swift in Sources */,
+				9285485E254ED7A9001F2B68 /* LoginState.swift in Sources */,
 				921EBC4B254DD23800B91740 /* SelectAppModeViewController.swift in Sources */,
+				92854866254EEF9F001F2B68 /* RegistrationState.swift in Sources */,
+				92854872254EEFD5001F2B68 /* RegistrationLogicController.swift in Sources */,
 				921EBC10254C906700B91740 /* RootViewCoordinator.swift in Sources */,
 				921EBC31254DB28400B91740 /* LoadingViewController.swift in Sources */,
 				921EBC2C254DAF0100B91740 /* BaseViewController.swift in Sources */,
 				921EBC3C254DB4CD00B91740 /* Reachability.swift in Sources */,
+				9285486C254EEFC7001F2B68 /* RegistrationViewController.swift in Sources */,
 				921EBBB7254C115400B91740 /* AppDelegate.swift in Sources */,
 				921EBC17254C96DC00B91740 /* Constants.swift in Sources */,
+				92854859254ED777001F2B68 /* LoginLogicController.swift in Sources */,
 				921EBC36254DB29600B91740 /* BlockerViewController.swift in Sources */,
 				921EBC5A254DE09500B91740 /* IntroCoordinator.swift in Sources */,
 			);

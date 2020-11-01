@@ -44,6 +44,7 @@ class IntroCoordinator: RootViewCoordinator {
 
 	func startLogin() {
 		let loginViewController = LoginViewController()
+		loginViewController.delegate = self
 		self.navigationController.viewControllers = [loginViewController]
 	}
 }
@@ -52,5 +53,23 @@ class IntroCoordinator: RootViewCoordinator {
 extension IntroCoordinator: SelectAppModeControllerDelegate {
 	func selectedAppMode(appMode: ApplicationModeType) {
 		delegate?.selectedAppMode(appMode)
+	}
+}
+
+extension IntroCoordinator: LoginControllerDelegate {
+	func loginSuccess() {
+		//TODO: add protocol of intro coordinator which will be handled in app coordinator
+	}
+
+	func registrationDidTap() {
+		let registrationViewController = RegistrationViewController()
+		registrationViewController.delegate = self
+		self.navigationController.pushViewController(registrationViewController, animated: true)
+	}
+}
+
+extension IntroCoordinator: RegistrationControllerDelegate {
+	func registrationSuccess() {
+		self.navigationController.popToRootViewController(animated: true)
 	}
 }
