@@ -22,6 +22,21 @@ class SettingsCoordinator: NSObject, RootViewCoordinator {
 
 	func start() {
 		let settingsViewController = SettingsViewController()
+		settingsViewController.delegate = self
 		navigationController.pushViewController(settingsViewController, animated: true)
+	}
+}
+
+extension SettingsCoordinator: SettingsViewControllerDelegate {
+	func settingsOptionDidTap(optionType: SettingsCellType) {
+		switch optionType {
+			case .signOut:
+				UserDefaults.standard.removeObject(forKey: UserDefaultsKey.kUsername)
+				UserDefaults.standard.synchronize()
+				let delegate = UIApplication.shared.delegate as? AppDelegate
+				delegate?.appCoordinator.showLoginViewController()
+			default:
+				break
+		}
 	}
 }

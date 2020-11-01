@@ -104,7 +104,8 @@ class AppCoordinator: RootViewCoordinator {
 
 		let settingsViewController = SettingsViewController()
 		let settingsTab = newTab(rootVC: settingsViewController, tabImage: "ic_settings", tag: Tab.settings.rawValue)
-		let settingsCoordinator = HistoryCoordinator(rootViewController: settingsTab)
+		let settingsCoordinator = SettingsCoordinator(rootViewController: settingsTab)
+		settingsViewController.delegate = settingsCoordinator
 		addChildCoordinator(settingsCoordinator)
 
 		tabViewController.viewControllers = [homeTab, historyTab, settingsTab]
