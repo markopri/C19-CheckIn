@@ -29,9 +29,10 @@ class AppCoordinator: RootViewCoordinator {
 	public func start() {
 		let isSelectedModeType = UserDefaults.standard.bool(forKey: UserDefaultsKey.kIsSelectedModeType)
 		if isSelectedModeType {
+			//TODO: add check if user is logged in or device name has been entered
 			let selectedModeType = UserDefaults.standard.value(forKey: UserDefaultsKey.kSelectedApplicationModeType) as! String
 			if selectedModeType == ApplicationModeType.admin.rawValue {
-				//TODO: redirect to screen for admin entering data for device
+				showDeviceRegistrationViewController()
 			} else {
 				showLoginViewController()
 			}
@@ -59,12 +60,22 @@ class AppCoordinator: RootViewCoordinator {
 		self.addChildCoordinator(introCoordinator)
 		self.rootViewController.present(introCoordinator.rootViewController, animated: false, completion: nil)
 	}
+
+	func showDeviceRegistrationViewController() {
+		self.childCoordinators.removeAll()
+		self.rootViewController = UINavigationController()
+		self.window.rootViewController = self.rootViewController
+		introCoordinator.delegate = self
+		introCoordinator.startDeviceRegistration()
+		self.addChildCoordinator(introCoordinator)
+		self.rootViewController.present(introCoordinator.rootViewController, animated: false, completion: nil)
+	}
 }
 
 extension AppCoordinator: IntroCoordinatorDelegate {
 	func selectedAppMode(_ selectedAppMode: ApplicationModeType) {
 		if selectedAppMode == .admin {
-			//TODO: redirect to screen for admin entering data for device
+			showDeviceRegistrationViewController()
 		} else {
 			showLoginViewController()
 		}

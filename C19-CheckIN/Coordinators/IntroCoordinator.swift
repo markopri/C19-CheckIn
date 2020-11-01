@@ -47,6 +47,12 @@ class IntroCoordinator: RootViewCoordinator {
 		loginViewController.delegate = self
 		self.navigationController.viewControllers = [loginViewController]
 	}
+
+	func startDeviceRegistration() {
+		let deviceRegistrationViewController = DeviceRegistrationViewController()
+		deviceRegistrationViewController.delegate = self
+		self.navigationController.viewControllers = [deviceRegistrationViewController]
+	}
 }
 
 //MARK: Extensions
@@ -71,5 +77,11 @@ extension IntroCoordinator: LoginControllerDelegate {
 extension IntroCoordinator: RegistrationControllerDelegate {
 	func registrationSuccess() {
 		self.navigationController.popToRootViewController(animated: true)
+	}
+}
+
+extension IntroCoordinator: DeviceRegistrationControllerDelegate {
+	func deviceRegistrationSuccess() {
+		//TODO: add protocol of intro coordinator which will be handled in app coordinator
 	}
 }
