@@ -16,8 +16,11 @@ class LoginLogicController {
 
 		if (uniqueId == "") {
 			handler(.failed("You need to enter unique ID to proceed"))
-		}
+		} else {
+			UserDefaults.standard.set(uniqueId, forKey: UserDefaultsKey.kUsername)
+			UserDefaults.standard.synchronize()
 
-		handler(.success)
+			handler(.success)
+		}
 	}
 }

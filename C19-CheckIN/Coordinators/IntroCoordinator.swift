@@ -10,6 +10,8 @@ import UIKit
 
 protocol IntroCoordinatorDelegate: class {
 	func selectedAppMode(_ selectedAppMode: ApplicationModeType)
+	func userLoginSuccess()
+	func deviceRegistratiponSuccess()
 }
 
 class IntroCoordinator: RootViewCoordinator {
@@ -64,7 +66,7 @@ extension IntroCoordinator: SelectAppModeControllerDelegate {
 
 extension IntroCoordinator: LoginControllerDelegate {
 	func loginSuccess() {
-		//TODO: add protocol of intro coordinator which will be handled in app coordinator
+		delegate?.userLoginSuccess()
 	}
 
 	func registrationDidTap() {
@@ -82,6 +84,6 @@ extension IntroCoordinator: RegistrationControllerDelegate {
 
 extension IntroCoordinator: DeviceRegistrationControllerDelegate {
 	func deviceRegistrationSuccess() {
-		//TODO: add protocol of intro coordinator which will be handled in app coordinator
+		delegate?.deviceRegistratiponSuccess()
 	}
 }

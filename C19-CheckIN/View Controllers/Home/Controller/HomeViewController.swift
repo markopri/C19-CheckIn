@@ -1,5 +1,5 @@
 //
-//  DeviceHomeViewController.swift
+//  HomeViewController.swift
 //  C19-CheckIN
 //
 //  Created by Marko Koprivnjak on 01/11/2020.
@@ -7,12 +7,12 @@
 
 import UIKit
 
-class DeviceHomeViewController: BaseViewController {
-	@IBOutlet weak var lblDeviceName: UILabel!
-	@IBOutlet weak var lblCurrentUSerNumber: UILabel!
+class HomeViewController: BaseViewController {
+	@IBOutlet weak var btnSelectRoom: UIButton!
+	@IBOutlet weak var btnCheckIn: UIButton!
 
 	init() {
-		super.init(isUsingBLE: false, isUsingNetwork: true)
+		super.init(isTabBarHidden: false, isUsingBLE: false, isUsingNetwork: true)
 	}
 
 	required init?(coder: NSCoder) {
@@ -32,10 +32,15 @@ class DeviceHomeViewController: BaseViewController {
 
 	//MARK: Layout
 	func setupLayout() {
-		let deviceName = UserDefaults.standard.value(forKey: UserDefaultsKey.kEnteredDeviceName) as! String
-		lblDeviceName.text = deviceName
 		//TODO: Add device name and current number of users
 	}
 
 
+	//MARK: Button actions
+	@IBAction func btnSelectRoomTapped(_ sender: UIButton) {
+	}
+
+	@IBAction func btnCheckInTapped(_ sender: UIButton) {
+	}
+	
 }

@@ -6,7 +6,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -50,7 +49,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="lVA-ht-ycd" firstAttribute="leading" secondItem="Jvh-ey-Pja" secondAttribute="leading" constant="20" symbolic="YES" id="6sz-fv-tRB"/>
                         <constraint firstAttribute="trailing" secondItem="lVA-ht-ycd" secondAttribute="trailing" constant="20" symbolic="YES" id="8Cq-CX-2Mz"/>
@@ -90,8 +89,5 @@
         <namedColor name="textfield_tint_primary">
             <color red="0.10599999874830246" green="0.14100000262260437" blue="0.20000000298023224" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

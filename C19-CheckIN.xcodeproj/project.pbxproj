@@ -42,6 +42,21 @@
 		9285488F254F18CD001F2B68 /* DeviceRegistrationLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9285488E254F18CD001F2B68 /* DeviceRegistrationLogicController.swift */; };
 		92854895254F1B15001F2B68 /* DeviceHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92854893254F1B15001F2B68 /* DeviceHomeViewController.swift */; };
 		92854896254F1B15001F2B68 /* DeviceHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92854894254F1B15001F2B68 /* DeviceHomeViewController.xib */; };
+		928548A5254F1ED0001F2B68 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928548A3254F1ED0001F2B68 /* HomeViewController.swift */; };
+		928548A6254F1ED0001F2B68 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 928548A4254F1ED0001F2B68 /* HomeViewController.xib */; };
+		928548AF254F1EF2001F2B68 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928548AD254F1EF2001F2B68 /* HistoryViewController.swift */; };
+		928548B0254F1EF2001F2B68 /* HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 928548AE254F1EF2001F2B68 /* HistoryViewController.xib */; };
+		928548B6254F1F04001F2B68 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928548B4254F1F04001F2B68 /* SettingsViewController.swift */; };
+		928548B7254F1F04001F2B68 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 928548B5254F1F04001F2B68 /* SettingsViewController.xib */; };
+		928548C3254F20A2001F2B68 /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928548C1254F20A2001F2B68 /* CheckInViewController.swift */; };
+		928548C4254F20A2001F2B68 /* CheckInViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 928548C2254F20A2001F2B68 /* CheckInViewController.xib */; };
+		928548CA254F20B3001F2B68 /* SelectDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928548C8254F20B3001F2B68 /* SelectDeviceViewController.swift */; };
+		928548CB254F20B3001F2B68 /* SelectDeviceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 928548C9254F20B3001F2B68 /* SelectDeviceViewController.xib */; };
+		928548D0254F296A001F2B68 /* DeviceHomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928548CF254F296A001F2B68 /* DeviceHomeCoordinator.swift */; };
+		928548D5254F2D85001F2B68 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928548D4254F2D85001F2B68 /* Tab.swift */; };
+		928548DA254F2DE2001F2B68 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928548D9254F2DE2001F2B68 /* HomeCoordinator.swift */; };
+		928548DF254F2E02001F2B68 /* HistoryCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928548DE254F2E02001F2B68 /* HistoryCoordinator.swift */; };
+		928548E4254F2E11001F2B68 /* SettingsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928548E3254F2E11001F2B68 /* SettingsCoordinator.swift */; };
 		D646C03D675309801D3E76E9 /* Pods_C19_CheckIN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 090637E86B859CDC101DFEF2 /* Pods_C19_CheckIN.framework */; };
 /* End PBXBuildFile section */
 
@@ -106,6 +121,21 @@
 		9285488E254F18CD001F2B68 /* DeviceRegistrationLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceRegistrationLogicController.swift; sourceTree = "<group>"; };
 		92854893254F1B15001F2B68 /* DeviceHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceHomeViewController.swift; sourceTree = "<group>"; };
 		92854894254F1B15001F2B68 /* DeviceHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DeviceHomeViewController.xib; sourceTree = "<group>"; };
+		928548A3254F1ED0001F2B68 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		928548A4254F1ED0001F2B68 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		928548AD254F1EF2001F2B68 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		928548AE254F1EF2001F2B68 /* HistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryViewController.xib; sourceTree = "<group>"; };
+		928548B4254F1F04001F2B68 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		928548B5254F1F04001F2B68 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		928548C1254F20A2001F2B68 /* CheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewController.swift; sourceTree = "<group>"; };
+		928548C2254F20A2001F2B68 /* CheckInViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckInViewController.xib; sourceTree = "<group>"; };
+		928548C8254F20B3001F2B68 /* SelectDeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectDeviceViewController.swift; sourceTree = "<group>"; };
+		928548C9254F20B3001F2B68 /* SelectDeviceViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectDeviceViewController.xib; sourceTree = "<group>"; };
+		928548CF254F296A001F2B68 /* DeviceHomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceHomeCoordinator.swift; sourceTree = "<group>"; };
+		928548D4254F2D85001F2B68 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		928548D9254F2DE2001F2B68 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		928548DE254F2E02001F2B68 /* HistoryCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCoordinator.swift; sourceTree = "<group>"; };
+		928548E3254F2E11001F2B68 /* SettingsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCoordinator.swift; sourceTree = "<group>"; };
 		9585FAF8EA3AA2E25BF7BA6B /* Pods-C19-CheckIN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-C19-CheckIN.debug.xcconfig"; path = "Target Support Files/Pods-C19-CheckIN/Pods-C19-CheckIN.debug.xcconfig"; sourceTree = "<group>"; };
 		BB1072CF4C1B85B013077997 /* Pods-C19-CheckIN-C19-CheckINUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-C19-CheckIN-C19-CheckINUITests.release.xcconfig"; path = "Target Support Files/Pods-C19-CheckIN-C19-CheckINUITests/Pods-C19-CheckIN-C19-CheckINUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CE4302CDC7012C5CE65BC4E2 /* Pods-C19-CheckINTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-C19-CheckINTests.debug.xcconfig"; path = "Target Support Files/Pods-C19-CheckINTests/Pods-C19-CheckINTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -223,6 +253,10 @@
 				921EBC07254C8FBA00B91740 /* Coordinator.swift */,
 				921EBC0F254C906700B91740 /* RootViewCoordinator.swift */,
 				921EBC59254DE09500B91740 /* IntroCoordinator.swift */,
+				928548CF254F296A001F2B68 /* DeviceHomeCoordinator.swift */,
+				928548D9254F2DE2001F2B68 /* HomeCoordinator.swift */,
+				928548DE254F2E02001F2B68 /* HistoryCoordinator.swift */,
+				928548E3254F2E11001F2B68 /* SettingsCoordinator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -261,6 +295,11 @@
 				921EBC2B254DAF0100B91740 /* BaseViewController.swift */,
 				921EBC30254DB28400B91740 /* LoadingViewController.swift */,
 				921EBC35254DB29600B91740 /* BlockerViewController.swift */,
+				9285489A254F1E5C001F2B68 /* History */,
+				9285489D254F1E5D001F2B68 /* Home */,
+				928548BB254F2095001F2B68 /* Check In */,
+				928548BE254F2095001F2B68 /* Select Device */,
+				928548A0254F1E5D001F2B68 /* Settings */,
 				9285487C254F187C001F2B68 /* Device Home */,
 				92854879254F187C001F2B68 /* Device Registration */,
 				921EBC46254DD22600B91740 /* Select App Mode */,
@@ -274,6 +313,7 @@
 			isa = PBXGroup;
 			children = (
 				921EBC23254C9EC200B91740 /* ApplicationModeType.swift */,
+				928548D4254F2D85001F2B68 /* Tab.swift */,
 			);
 			path = Enumerations;
 			sourceTree = "<group>";
@@ -425,6 +465,131 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		9285489A254F1E5C001F2B68 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				9285489B254F1E5C001F2B68 /* Controller */,
+				9285489C254F1E5C001F2B68 /* Model */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		9285489B254F1E5C001F2B68 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				928548AD254F1EF2001F2B68 /* HistoryViewController.swift */,
+				928548AE254F1EF2001F2B68 /* HistoryViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9285489C254F1E5C001F2B68 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		9285489D254F1E5D001F2B68 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				9285489E254F1E5D001F2B68 /* Controller */,
+				9285489F254F1E5D001F2B68 /* Model */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		9285489E254F1E5D001F2B68 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				928548A3254F1ED0001F2B68 /* HomeViewController.swift */,
+				928548A4254F1ED0001F2B68 /* HomeViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		9285489F254F1E5D001F2B68 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		928548A0254F1E5D001F2B68 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				928548A1254F1E5D001F2B68 /* Controller */,
+				928548A2254F1E5D001F2B68 /* Model */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		928548A1254F1E5D001F2B68 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				928548B4254F1F04001F2B68 /* SettingsViewController.swift */,
+				928548B5254F1F04001F2B68 /* SettingsViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		928548A2254F1E5D001F2B68 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		928548BB254F2095001F2B68 /* Check In */ = {
+			isa = PBXGroup;
+			children = (
+				928548BC254F2095001F2B68 /* Controller */,
+				928548BD254F2095001F2B68 /* Model */,
+			);
+			path = "Check In";
+			sourceTree = "<group>";
+		};
+		928548BC254F2095001F2B68 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				928548C1254F20A2001F2B68 /* CheckInViewController.swift */,
+				928548C2254F20A2001F2B68 /* CheckInViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		928548BD254F2095001F2B68 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		928548BE254F2095001F2B68 /* Select Device */ = {
+			isa = PBXGroup;
+			children = (
+				928548BF254F2095001F2B68 /* Controller */,
+				928548C0254F2095001F2B68 /* Model */,
+			);
+			path = "Select Device";
+			sourceTree = "<group>";
+		};
+		928548BF254F2095001F2B68 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				928548C8254F20B3001F2B68 /* SelectDeviceViewController.swift */,
+				928548C9254F20B3001F2B68 /* SelectDeviceViewController.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		928548C0254F2095001F2B68 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		EA0A5722154A35A0683BB144 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -545,12 +710,17 @@
 			files = (
 				921EBC67254DEB6600B91740 /* LoginViewController.xib in Resources */,
 				9285488A254F18B6001F2B68 /* DeviceRegistrationViewController.xib in Resources */,
+				928548CB254F20B3001F2B68 /* SelectDeviceViewController.xib in Resources */,
+				928548B7254F1F04001F2B68 /* SettingsViewController.xib in Resources */,
 				921EBBC3254C115600B91740 /* LaunchScreen.storyboard in Resources */,
+				928548B0254F1EF2001F2B68 /* HistoryViewController.xib in Resources */,
 				921EBC4C254DD23800B91740 /* SelectAppModeViewController.xib in Resources */,
 				9285486D254EEFC7001F2B68 /* RegistrationViewController.xib in Resources */,
 				92854896254F1B15001F2B68 /* DeviceHomeViewController.xib in Resources */,
 				921EBBC0254C115600B91740 /* Assets.xcassets in Resources */,
 				921EBBBE254C115400B91740 /* Main.storyboard in Resources */,
+				928548C4254F20A2001F2B68 /* CheckInViewController.xib in Resources */,
+				928548A6254F1ED0001F2B68 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -682,16 +852,22 @@
 				921EBC08254C8FBA00B91740 /* Coordinator.swift in Sources */,
 				921EBC52254DDD0600B91740 /* UIButton.swift in Sources */,
 				9285488F254F18CD001F2B68 /* DeviceRegistrationLogicController.swift in Sources */,
+				928548C3254F20A2001F2B68 /* CheckInViewController.swift in Sources */,
 				921EBBF9254C232500B91740 /* AppCoordinator.swift in Sources */,
 				92854889254F18B6001F2B68 /* DeviceRegistrationViewController.swift in Sources */,
 				921EBC24254C9EC200B91740 /* ApplicationModeType.swift in Sources */,
 				9285485E254ED7A9001F2B68 /* LoginState.swift in Sources */,
+				928548DF254F2E02001F2B68 /* HistoryCoordinator.swift in Sources */,
 				921EBC4B254DD23800B91740 /* SelectAppModeViewController.swift in Sources */,
 				92854895254F1B15001F2B68 /* DeviceHomeViewController.swift in Sources */,
 				92854866254EEF9F001F2B68 /* RegistrationState.swift in Sources */,
+				928548CA254F20B3001F2B68 /* SelectDeviceViewController.swift in Sources */,
+				928548A5254F1ED0001F2B68 /* HomeViewController.swift in Sources */,
 				92854872254EEFD5001F2B68 /* RegistrationLogicController.swift in Sources */,
+				928548AF254F1EF2001F2B68 /* HistoryViewController.swift in Sources */,
 				921EBC10254C906700B91740 /* RootViewCoordinator.swift in Sources */,
 				921EBC31254DB28400B91740 /* LoadingViewController.swift in Sources */,
+				928548E4254F2E11001F2B68 /* SettingsCoordinator.swift in Sources */,
 				921EBC2C254DAF0100B91740 /* BaseViewController.swift in Sources */,
 				92854880254F1891001F2B68 /* DeviceRegistrationState.swift in Sources */,
 				921EBC3C254DB4CD00B91740 /* Reachability.swift in Sources */,
@@ -699,6 +875,10 @@
 				921EBBB7254C115400B91740 /* AppDelegate.swift in Sources */,
 				921EBC17254C96DC00B91740 /* Constants.swift in Sources */,
 				92854859254ED777001F2B68 /* LoginLogicController.swift in Sources */,
+				928548B6254F1F04001F2B68 /* SettingsViewController.swift in Sources */,
+				928548D0254F296A001F2B68 /* DeviceHomeCoordinator.swift in Sources */,
+				928548DA254F2DE2001F2B68 /* HomeCoordinator.swift in Sources */,
+				928548D5254F2D85001F2B68 /* Tab.swift in Sources */,
 				921EBC36254DB29600B91740 /* BlockerViewController.swift in Sources */,
 				921EBC5A254DE09500B91740 /* IntroCoordinator.swift in Sources */,
 			);

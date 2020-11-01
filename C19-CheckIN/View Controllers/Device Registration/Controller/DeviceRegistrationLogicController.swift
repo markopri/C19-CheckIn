@@ -17,9 +17,10 @@ class DeviceRegistrationLogicController {
 		if (name == "") {
 			handler(.failed("You need to enter device name to proceed"))
 		} else {
-			//TODO: need to save device name
-		}
+			UserDefaults.standard.set(name, forKey: UserDefaultsKey.kEnteredDeviceName)
+			UserDefaults.standard.synchronize()
 
-		handler(.success)
+			handler(.success)
+		}
 	}
 }

@@ -29,12 +29,19 @@ class AppCoordinator: RootViewCoordinator {
 	public func start() {
 		let isSelectedModeType = UserDefaults.standard.bool(forKey: UserDefaultsKey.kIsSelectedModeType)
 		if isSelectedModeType {
-			//TODO: add check if user is logged in or device name has been entered
 			let selectedModeType = UserDefaults.standard.value(forKey: UserDefaultsKey.kSelectedApplicationModeType) as! String
 			if selectedModeType == ApplicationModeType.admin.rawValue {
-				showDeviceRegistrationViewController()
+				if UserDefaults.standard.object(forKey: UserDefaultsKey.kEnteredDeviceName) != nil {
+					showDeviceHome()
+				} else {
+					showDeviceRegistrationViewController()
+				}
 			} else {
-				showLoginViewController()
+				if UserDefaults.standard.object(forKey: UserDefaultsKey.kUsername) != nil {
+					showUserHome()
+				} else {
+					showLoginViewController()
+				}
 			}
 		} else {
 			showSelectAppModeViewController()
@@ -70,6 +77,62 @@ class AppCoordinator: RootViewCoordinator {
 		self.addChildCoordinator(introCoordinator)
 		self.rootViewController.present(introCoordinator.rootViewController, animated: false, completion: nil)
 	}
+
+	func showDeviceHome() {
+		self.rootViewController = UINavigationController()
+		self.window.rootViewController = self.rootViewController
+		let homeCoordinator = DeviceHomeCoordinator(rootViewController: rootViewController)
+		homeCoordinator.start()
+		self.addChildCoordinator(homeCoordinator)
+	}
+
+	func showUserHome() {
+		let tabViewController = UITabBarController()
+		tabViewController.tabBar.unselectedItemTintColor = .white
+		tabViewController.tabBar.tintColor = .white
+		UITabBar.appearance().selectionIndicatorImage = getImageWithColorPosition(color: UIColor(named: "button_background_primary")!, size: CGSize(width:30,height: 22), lineSize: CGSize(width:30, height:3))
+
+		let homeViewController = HomeViewController()
+		let homeTab = newTab(rootVC: homeViewController, tabImage: "ic_home", tag: Tab.home.rawValue)
+		let homeCoordinator = HomeCoordinator(rootViewController: homeTab)
+		addChildCoordinator(homeCoordinator)
+
+		let historyViewController = HistoryViewController()
+		let historyTab = newTab(rootVC: historyViewController, tabImage: "ic_history", tag: Tab.history.rawValue)
+		let historyCoordinator = HistoryCoordinator(rootViewController: historyTab)
+		addChildCoordinator(historyCoordinator)
+
+		let settingsViewController = SettingsViewController()
+		let settingsTab = newTab(rootVC: settingsViewController, tabImage: "ic_settings", tag: Tab.settings.rawValue)
+		let settingsCoordinator = HistoryCoordinator(rootViewController: settingsTab)
+		addChildCoordinator(settingsCoordinator)
+
+		tabViewController.viewControllers = [homeTab, historyTab, settingsTab]
+		self.rootViewController = tabViewController
+		tabViewController.selectedIndex = Tab.home.rawValue
+		self.window.rootViewController = self.rootViewController
+	}
+
+	private func newTab(rootVC: UIViewController, tabImage: String, tag: Int) -> UINavigationController {
+		let navVC = UINavigationController()
+		navVC.viewControllers = [rootVC]
+		navVC.tabBarItem = UITabBarItem(title: nil, image: UIImage(named:tabImage), tag: tag)
+		navVC.tabBarItem.imageInsets = UIEdgeInsets(top: 0, left: 0, bottom: -6, right: 0)
+		return navVC
+	}
+	
+	private func getImageWithColorPosition(color: UIColor, size: CGSize, lineSize: CGSize) -> UIImage {
+		let rect = CGRect(x:0, y: 0, width: size.width, height: size.height)
+		let rectLine = CGRect(x:0, y:size.height-lineSize.height,width: lineSize.width,height: lineSize.height)
+		UIGraphicsBeginImageContextWithOptions(size, false, 0)
+		UIColor.clear.setFill()
+		UIRectFill(rect)
+		color.setFill()
+		UIRectFill(rectLine)
+		let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+		UIGraphicsEndImageContext()
+		return image
+	}
 }
 
 extension AppCoordinator: IntroCoordinatorDelegate {
@@ -79,5 +142,13 @@ extension AppCoordinator: IntroCoordinatorDelegate {
 		} else {
 			showLoginViewController()
 		}
+	}
+
+	func userLoginSuccess() {
+		showUserHome()
+	}
+
+	func deviceRegistratiponSuccess() {
+		showDeviceHome()
 	}
 }

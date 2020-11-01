@@ -10,6 +10,8 @@ import Foundation
 public struct UserDefaultsKey {
 	public static let kIsSelectedModeType = "isSelectedModeType"
 	public static let kSelectedApplicationModeType = "selectedApplicationModeType"
+	public static let kEnteredDeviceName = "enteredDeviceName"
+	public static let kUsername = "username"
 }
 
 public struct NotificationEvent {
