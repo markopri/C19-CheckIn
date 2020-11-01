@@ -10,8 +10,11 @@ import UIKit
 class HistoryViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
 	@IBOutlet weak var tableView: UITableView!
 
+	var cellModels: [Any] = []
+
 	init() {
 		super.init(isTabBarHidden: false, isUsingBLE: false, isUsingNetwork: true)
+		setupCellModel()
 	}
 
 	required init?(coder: NSCoder) {
@@ -20,6 +23,8 @@ class HistoryViewController: BaseViewController, UITableViewDelegate, UITableVie
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+
+		tableView.register(UINib(nibName: "HistoryCell", bundle: nil), forCellReuseIdentifier: "HistoryCell")
 	}
 
 	override func viewWillAppear(_ animated: Bool) {
@@ -28,13 +33,30 @@ class HistoryViewController: BaseViewController, UITableViewDelegate, UITableVie
 	}
 
 
+	//MARK: Layout
+	private func setupCellModel() {
+		cellModels.removeAll()
+
+		cellModels.append(HistoryCellModel(roomTitle: "Room 1", startTime: "1.1.2020 11:15:00", endTime: "1.1.2020 12:00:00", duration: "45 min"))
+		cellModels.append(HistoryCellModel(roomTitle: "Room 3", startTime: "2.1.2020 11:15:00", endTime: "2.1.2020 12:00:00", duration: "45 min"))
+		cellModels.append(HistoryCellModel(roomTitle: "Room 44", startTime: "3.1.2020 11:15:00", endTime: "3.1.2020 12:00:00", duration: "45 min"))
+	}
+
+
 	//MARK: TableView Delegate/DS
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return 3
+		return cellModels.count
 	}
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = UITableViewCell()
+		let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryCell") as! HistoryCell
+		let model = cellModels[indexPath.row] as! HistoryCellModel
+		cell.setup(model)
+
 		return cell
+	}
+
+	func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+		return 124
 	}
 }

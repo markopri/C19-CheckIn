@@ -22,6 +22,14 @@ class HomeCoordinator: NSObject, RootViewCoordinator {
 
 	func start() {
 		let homeViewController = HomeViewController()
+		homeViewController.delegate = self
 		navigationController.pushViewController(homeViewController, animated: true)
+	}
+}
+
+extension HomeCoordinator: HomeViewControllerDelegate {
+	func goToCheckOut() {
+		let checkoOutViewController = CheckInViewController()
+		navigationController.pushViewController(checkoOutViewController, animated: true)
 	}
 }

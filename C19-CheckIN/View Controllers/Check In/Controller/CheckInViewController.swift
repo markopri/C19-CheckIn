@@ -7,23 +7,40 @@
 
 import UIKit
 
-class CheckInViewController: UIViewController {
+class CheckInViewController: BaseViewController {
+	@IBOutlet weak var lblRoomName: UILabel!
+	@IBOutlet weak var lblDuration: UILabel!
+	@IBOutlet weak var lblStartTime: UILabel!
+	@IBOutlet weak var btnCheckOut: UIButton!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+	init() {
+		super.init(isTabBarHidden: true, isUsingBLE: false, isUsingNetwork: true)
+	}
 
-        // Do any additional setup after loading the view.
-    }
+	required init?(coder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+
+	override func viewDidLoad() {
+		super.viewDidLoad()
+	}
+
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		setupNavigation(barTintColor: UIColor(named: "background_primary")!, textColor: .white)
+		setupLayout()
+		self.navigationItem.setHidesBackButton(true, animated: true)
+	}
 
 
-    /*
-    // MARK: - Navigation
+	//MARK: Layout
+	func setupLayout() {
+		btnCheckOut.addRounded(backgroundColor: UIColor(named: "button_background_primary")!, titleColor: UIColor(named: "button_tint_primary")!)
+		btnCheckOut.setTitle("Check out", for: .normal)
+	}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
+	//MARK: Button actions
+	@IBAction func btnCheckOutTapped(_ sender: UIButton) {
+	}
 }

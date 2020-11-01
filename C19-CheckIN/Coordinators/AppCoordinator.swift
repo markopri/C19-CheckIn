@@ -95,6 +95,7 @@ class AppCoordinator: RootViewCoordinator {
 		let homeViewController = HomeViewController()
 		let homeTab = newTab(rootVC: homeViewController, tabImage: "ic_home", tag: Tab.home.rawValue)
 		let homeCoordinator = HomeCoordinator(rootViewController: homeTab)
+		homeViewController.delegate = homeCoordinator
 		addChildCoordinator(homeCoordinator)
 
 		let historyViewController = HistoryViewController()
