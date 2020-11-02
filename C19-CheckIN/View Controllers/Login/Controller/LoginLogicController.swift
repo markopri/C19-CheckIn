@@ -17,6 +17,7 @@ class LoginLogicController {
 		if (uniqueId == "") {
 			handler(.failed("You need to enter unique ID to proceed"))
 		} else {
+			//TODO: Send entered id to BE -> check if it is valid, then continue
 			UserDefaults.standard.set(uniqueId, forKey: UserDefaultsKey.kUsername)
 			UserDefaults.standard.synchronize()
 

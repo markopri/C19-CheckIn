@@ -17,8 +17,8 @@ class RegistrationLogicController {
 		if (name == "" || email == "") {
 			handler(.failed("You need to enter name and email to proceed"))
 		} else {
-			//TODO: need to do check if user exists
-			//TODO: add generation of unique id
+			//TODO: need to do check if user exists -> implementation with BE to ensure unique ID
+			//TODO: return of unique ID from BE -> show to user or better send him an email with this information
 		}
 
 		handler(.success)
