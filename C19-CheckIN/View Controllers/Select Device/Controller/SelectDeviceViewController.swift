@@ -6,7 +6,7 @@
 //
 
 protocol SelectDeviceViewControllerDelegate: class {
-	func confirmSelectedDeviceDidTap()
+	func confirmSelectedDeviceDidTap(name: String)
 }
 
 import UIKit
@@ -15,10 +15,13 @@ class SelectDeviceViewController: BaseViewController, UITableViewDelegate, UITab
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var btnConfirm: UIButton!
 
+	var scannedDeviceNames: [String]
 	var cellModels: [Any] = []
 	weak var delegate: SelectDeviceViewControllerDelegate?
+	var selectedDeviceName: String = ""
 
-	init() {
+	init(scannedDeviceNames: [String]) {
+		self.scannedDeviceNames = scannedDeviceNames
 		super.init(isTabBarHidden: true, isUsingBLE: true, isUsingNetwork: true)
 		setupCellModel()
 	}
@@ -30,6 +33,7 @@ class SelectDeviceViewController: BaseViewController, UITableViewDelegate, UITab
 	override func viewDidLoad() {
 		super.viewDidLoad()
 
+		setupLayout()
 		tableView.register(UINib(nibName: "SelectRoomCell", bundle: nil), forCellReuseIdentifier: "SelectRoomCell")
 	}
 
@@ -40,14 +44,19 @@ class SelectDeviceViewController: BaseViewController, UITableViewDelegate, UITab
 
 
 	//MARK: Layout
+	private func setupLayout() {
+		btnConfirm.addRounded(backgroundColor: UIColor(named: "button_background_primary")!, titleColor: UIColor(named: "button_tint_primary")!)
+		btnConfirm.setTitle("Select room", for: .normal)
+		btnConfirm.isEnabled = false
+		btnConfirm.layer.opacity = 0.3
+	}
+
 	private func setupCellModel() {
 		cellModels.removeAll()
 
-		cellModels.append(SelectRoomCellModel(title: "Room 1"))
-		cellModels.append(SelectRoomCellModel(title: "Room 2"))
-		cellModels.append(SelectRoomCellModel(title: "Room 3"))
-		cellModels.append(SelectRoomCellModel(title: "Room 4"))
-		cellModels.append(SelectRoomCellModel(title: "Room 5"))
+		for device in scannedDeviceNames {
+			cellModels.append(SelectRoomCellModel(title: device))
+		}
 	}
 
 	//MARK: TableView Delegate/DS
@@ -67,7 +76,13 @@ class SelectDeviceViewController: BaseViewController, UITableViewDelegate, UITab
 		return 55
 	}
 
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		selectedDeviceName = scannedDeviceNames[indexPath.row]
+		btnConfirm.isEnabled = true
+		btnConfirm.layer.opacity = 1.0
+	}
+
 	@IBAction func btnConfirmTapped(_ sender: UIButton) {
-		delegate?.confirmSelectedDeviceDidTap()
+		delegate?.confirmSelectedDeviceDidTap(name: selectedDeviceName)
 	}
 }

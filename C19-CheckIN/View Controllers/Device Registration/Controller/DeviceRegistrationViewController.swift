@@ -45,6 +45,8 @@ class DeviceRegistrationViewController: BaseViewController, UITextFieldDelegate 
 		btnRegisterDevice.setTitle("Register device", for: .normal)
 
 		txtDeviceName.layer.cornerRadius = 8.0
+		txtDeviceName.attributedPlaceholder = NSAttributedString(string: "Enter device name",
+									 attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "button_background_primary")])
 	}
 
 

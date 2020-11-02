@@ -49,6 +49,8 @@ class LoginViewController: BaseViewController, UITextFieldDelegate {
 		btnRegister.setTitle("Register".uppercased(), for: .normal)
 
 		txtUniqueId.layer.cornerRadius = 8.0
+		txtUniqueId.attributedPlaceholder = NSAttributedString(string: "Enter unique ID",
+									 attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "button_background_primary")])
 	}
 
 

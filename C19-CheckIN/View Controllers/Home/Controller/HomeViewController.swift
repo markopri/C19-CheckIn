@@ -10,6 +10,7 @@ protocol HomeViewControllerDelegate: class {
 }
 
 import UIKit
+import CoreBluetooth
 
 class HomeViewController: BaseViewController {
 	@IBOutlet weak var btnSelectRoom: UIButton!
@@ -17,6 +18,9 @@ class HomeViewController: BaseViewController {
 
 	private var bluetoothManager: BluetoothManager
 	weak var delegate: HomeViewControllerDelegate?
+	var scannedDevices: Dictionary<UUID, String> = [:]
+	var scannedDeviceNames: [String] = []
+	var selectedDeviceName: String = ""
 
 	init(bluetoothManager: BluetoothManager) {
 		self.bluetoothManager = bluetoothManager
@@ -43,7 +47,11 @@ class HomeViewController: BaseViewController {
 	//MARK: Layout
 	func setupLayout() {
 		btnSelectRoom.addRounded(backgroundColor: UIColor(named: "button_background_secondary")!, titleColor: UIColor(named: "button_tint_primary")!)
-		btnSelectRoom.setTitle("Select room", for: .normal)
+		if selectedDeviceName == "" {
+			btnSelectRoom.setTitle("Select room", for: .normal)
+		} else {
+			btnSelectRoom.setTitle(selectedDeviceName, for: .normal)
+		}
 
 		btnCheckIn.addRounded(backgroundColor: UIColor(named: "button_background_primary")!, titleColor: UIColor(named: "button_tint_primary")!)
 		btnCheckIn.setTitle("Check In", for: .normal)
@@ -52,20 +60,26 @@ class HomeViewController: BaseViewController {
 
 	//MARK: Button actions
 	@IBAction func btnSelectRoomTapped(_ sender: UIButton) {
-		bluetoothManager.peripheral
-		let selectDeviceViewController = SelectDeviceViewController()
+		let selectDeviceViewController = SelectDeviceViewController(scannedDeviceNames: scannedDeviceNames)
 		selectDeviceViewController.delegate = self
 		self.navigationController?.pushViewController(selectDeviceViewController, animated: true)
 	}
 
 	@IBAction func btnCheckInTapped(_ sender: UIButton) {
-		delegate?.goToCheckOut()
+		if selectedDeviceName == "" {
+			let alert = UIAlertController(title: "Info", message: "Please select room before proceeding", preferredStyle: .alert)
+			alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+
+			self.present(alert, animated: true, completion: nil)
+		} else {
+			delegate?.goToCheckOut()
+		}
 	}
 }
 
 extension HomeViewController: SelectDeviceViewControllerDelegate {
-	func confirmSelectedDeviceDidTap() {
-		//TODO: set name of room into button
+	func confirmSelectedDeviceDidTap(name: String) {
+		selectedDeviceName = name
 		self.navigationController?.popViewController(animated: true)
 	}
 }
@@ -73,5 +87,12 @@ extension HomeViewController: SelectDeviceViewControllerDelegate {
 extension HomeViewController: BluetoothManagerDelegate {
 	func peripheralsDidUpdate() {
 		print(bluetoothManager.peripherals.mapValues{$0.name})
+		scannedDevices.removeAll()
+		scannedDeviceNames.removeAll()
+		scannedDevices = bluetoothManager.peripherals.mapValues{($0.name ?? "Unknown name")}
+
+		for dev in scannedDevices {
+			scannedDeviceNames.append(dev.value)
+		}
 	}
 }

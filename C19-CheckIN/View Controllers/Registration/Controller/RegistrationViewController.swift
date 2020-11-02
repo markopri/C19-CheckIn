@@ -48,6 +48,10 @@ class RegistrationViewController: BaseViewController, UITextFieldDelegate {
 
 		txtName.layer.cornerRadius = 8.0
 		txtEmail.layer.cornerRadius = 8.0
+		txtName.attributedPlaceholder = NSAttributedString(string: "Enter your name",
+									 attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "button_background_primary")])
+		txtEmail.attributedPlaceholder = NSAttributedString(string: "Enter your email address",
+									 attributes: [NSAttributedString.Key.foregroundColor: UIColor(named: "button_background_primary")])
 	}
 
 
