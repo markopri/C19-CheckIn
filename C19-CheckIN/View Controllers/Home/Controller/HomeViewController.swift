@@ -15,9 +15,11 @@ class HomeViewController: BaseViewController {
 	@IBOutlet weak var btnSelectRoom: UIButton!
 	@IBOutlet weak var btnCheckIn: UIButton!
 
+	private var bluetoothManager: BluetoothManager
 	weak var delegate: HomeViewControllerDelegate?
 
-	init() {
+	init(bluetoothManager: BluetoothManager) {
+		self.bluetoothManager = bluetoothManager
 		super.init(isTabBarHidden: false, isUsingBLE: false, isUsingNetwork: true)
 	}
 
@@ -33,6 +35,8 @@ class HomeViewController: BaseViewController {
 		super.viewWillAppear(animated)
 		setupNavigation(barTintColor: UIColor(named: "background_primary")!, textColor: .white)
 		setupLayout()
+		bluetoothManager.delegate = self
+		bluetoothManager.startScanning()
 	}
 
 
@@ -48,6 +52,7 @@ class HomeViewController: BaseViewController {
 
 	//MARK: Button actions
 	@IBAction func btnSelectRoomTapped(_ sender: UIButton) {
+		bluetoothManager.peripheral
 		let selectDeviceViewController = SelectDeviceViewController()
 		selectDeviceViewController.delegate = self
 		self.navigationController?.pushViewController(selectDeviceViewController, animated: true)
@@ -62,5 +67,11 @@ extension HomeViewController: SelectDeviceViewControllerDelegate {
 	func confirmSelectedDeviceDidTap() {
 		//TODO: set name of room into button
 		self.navigationController?.popViewController(animated: true)
+	}
+}
+
+extension HomeViewController: BluetoothManagerDelegate {
+	func peripheralsDidUpdate() {
+		print(bluetoothManager.peripherals.mapValues{$0.name})
 	}
 }

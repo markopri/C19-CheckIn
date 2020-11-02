@@ -17,3 +17,8 @@ public struct UserDefaultsKey {
 public struct NotificationEvent {
 	public static let networkPowerChange = "networkPowerChange"
 }
+
+
+public struct BluetoothService {
+	public static let serviceUUID = "4DF91029-B356-463E-9F48-BAB077BF3EF5"
+}

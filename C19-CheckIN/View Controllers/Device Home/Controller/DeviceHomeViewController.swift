@@ -11,7 +11,10 @@ class DeviceHomeViewController: BaseViewController {
 	@IBOutlet weak var lblDeviceName: UILabel!
 	@IBOutlet weak var lblCurrentUSerNumber: UILabel!
 
-	init() {
+	private var bluetoothManager: BluetoothManager
+
+	init(bluetoothManager: BluetoothManager) {
+		self.bluetoothManager = bluetoothManager
 		super.init(isUsingBLE: false, isUsingNetwork: true)
 	}
 
@@ -21,6 +24,9 @@ class DeviceHomeViewController: BaseViewController {
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
+
+		let deviceName = UserDefaults.standard.value(forKey: UserDefaultsKey.kEnteredDeviceName) as! String
+		bluetoothManager.startAdvertising(with: deviceName)
 	}
 
 	override func viewWillAppear(_ animated: Bool) {
@@ -35,6 +41,7 @@ class DeviceHomeViewController: BaseViewController {
 		let deviceName = UserDefaults.standard.value(forKey: UserDefaultsKey.kEnteredDeviceName) as! String
 		lblDeviceName.text = deviceName
 		//TODO: Add device name and current number of users
+		lblCurrentUSerNumber.text = ""
 	}
 
 

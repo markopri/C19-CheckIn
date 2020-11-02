@@ -11,17 +11,19 @@ import UIKit
 class HomeCoordinator: NSObject, RootViewCoordinator {
 	var childCoordinators: [Coordinator] = []
 	var rootViewController: UIViewController
+	var bluetoothManager: BluetoothManager
 
 	private var navigationController: UINavigationController {
 		return self.rootViewController as! UINavigationController
 	}
 
-	init(rootViewController: UIViewController) {
+	init(rootViewController: UIViewController, bluetoothManager: BluetoothManager) {
 		self.rootViewController = rootViewController
+		self.bluetoothManager = bluetoothManager
 	}
 
 	func start() {
-		let homeViewController = HomeViewController()
+		let homeViewController = HomeViewController(bluetoothManager: bluetoothManager)
 		homeViewController.delegate = self
 		navigationController.pushViewController(homeViewController, animated: true)
 	}

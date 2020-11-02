@@ -14,10 +14,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 	var appCoordinator: AppCoordinator!
 	var reachability: Reachability?
 
+	private lazy var bluetoothManager = CoreBluetoothManager()
+
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 		// Override point for customization after application launch.
 		AppDelegate.window = UIWindow(frame: UIScreen.main.bounds)
-		self.appCoordinator = AppCoordinator(window: AppDelegate.window!)
+		self.appCoordinator = AppCoordinator(window: AppDelegate.window!, bluetoothManager: bluetoothManager)
 
 		IQKeyboardManager.shared.enable = true
 

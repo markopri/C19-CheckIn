@@ -14,10 +14,12 @@ class AppCoordinator: RootViewCoordinator {
 	var introCoordinator: IntroCoordinator
 
 	let window: UIWindow
+	var bluetoothManager: BluetoothManager
 	var rootViewController: UIViewController = UINavigationController()
 
-	public init(window: UIWindow) {
+	public init(window: UIWindow, bluetoothManager: BluetoothManager) {
 		self.window = window
+		self.bluetoothManager = bluetoothManager
 		selectAppModeCoordinator = IntroCoordinator()
 		introCoordinator = IntroCoordinator()
 
@@ -81,7 +83,7 @@ class AppCoordinator: RootViewCoordinator {
 	func showDeviceHome() {
 		self.rootViewController = UINavigationController()
 		self.window.rootViewController = self.rootViewController
-		let homeCoordinator = DeviceHomeCoordinator(rootViewController: rootViewController)
+		let homeCoordinator = DeviceHomeCoordinator(rootViewController: rootViewController, bluetoothManager: bluetoothManager)
 		homeCoordinator.start()
 		self.addChildCoordinator(homeCoordinator)
 	}
@@ -92,9 +94,9 @@ class AppCoordinator: RootViewCoordinator {
 		tabViewController.tabBar.tintColor = .white
 		UITabBar.appearance().selectionIndicatorImage = getImageWithColorPosition(color: UIColor(named: "button_background_primary")!, size: CGSize(width:30,height: 22), lineSize: CGSize(width:30, height:3))
 
-		let homeViewController = HomeViewController()
+		let homeViewController = HomeViewController(bluetoothManager: bluetoothManager)
 		let homeTab = newTab(rootVC: homeViewController, tabImage: "ic_home", tag: Tab.home.rawValue)
-		let homeCoordinator = HomeCoordinator(rootViewController: homeTab)
+		let homeCoordinator = HomeCoordinator(rootViewController: homeTab, bluetoothManager: bluetoothManager)
 		homeViewController.delegate = homeCoordinator
 		addChildCoordinator(homeCoordinator)
 
