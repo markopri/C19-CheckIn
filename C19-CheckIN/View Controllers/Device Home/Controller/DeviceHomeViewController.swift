@@ -40,7 +40,6 @@ class DeviceHomeViewController: BaseViewController {
 	func setupLayout() {
 		let deviceName = UserDefaults.standard.value(forKey: UserDefaultsKey.kEnteredDeviceName) as! String
 		lblDeviceName.text = deviceName
-		//TODO: Add device name and current number of users
 		lblCurrentUSerNumber.text = ""
 	}
 

@@ -22,3 +22,7 @@ public struct NotificationEvent {
 public struct BluetoothService {
 	public static let serviceUUID = "4DF91029-B356-463E-9F48-BAB077BF3EF5"
 }
+
+public struct DateConstants {
+	public static let dateFormat = "dd.MM.yyyy HH:mm"
+}

@@ -6,7 +6,7 @@
 //
 
 protocol HomeViewControllerDelegate: class {
-	func goToCheckOut()
+	func goToCheckOut(deviceName: String)
 }
 
 import UIKit
@@ -72,7 +72,7 @@ class HomeViewController: BaseViewController {
 
 			self.present(alert, animated: true, completion: nil)
 		} else {
-			delegate?.goToCheckOut()
+			delegate?.goToCheckOut(deviceName: selectedDeviceName)
 		}
 	}
 }

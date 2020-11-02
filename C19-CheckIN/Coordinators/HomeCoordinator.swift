@@ -30,8 +30,8 @@ class HomeCoordinator: NSObject, RootViewCoordinator {
 }
 
 extension HomeCoordinator: HomeViewControllerDelegate {
-	func goToCheckOut() {
-		let checkoOutViewController = CheckInViewController()
+	func goToCheckOut(deviceName: String) {
+		let checkoOutViewController = CheckInViewController(selectedDeviceName: deviceName, startTime: Date().string(format: DateConstants.dateFormat))
 		navigationController.pushViewController(checkoOutViewController, animated: true)
 	}
 }
