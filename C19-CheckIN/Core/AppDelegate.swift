@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import IQKeyboardManagerSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 		// Override point for customization after application launch.
 		AppDelegate.window = UIWindow(frame: UIScreen.main.bounds)
 		self.appCoordinator = AppCoordinator(window: AppDelegate.window!)
+
+		IQKeyboardManager.shared.enable = true
 
 		reachability = try! Reachability()
 		do {

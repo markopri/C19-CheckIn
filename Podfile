@@ -7,6 +7,7 @@ target 'C19-CheckIN' do
 
   # Pods for C19-CheckIN
   pod 'Alamofire'
+	pod 'IQKeyboardManagerSwift'
 
   target 'C19-CheckINTests' do
     inherit! :search_paths
