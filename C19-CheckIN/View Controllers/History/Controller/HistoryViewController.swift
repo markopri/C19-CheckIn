@@ -6,15 +6,17 @@
 //
 
 import UIKit
+import CoreData
 
 class HistoryViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
 	@IBOutlet weak var tableView: UITableView!
 
 	var cellModels: [Any] = []
+	var databaseContent: [NSManagedObject] = []
 
 	init() {
 		super.init(isTabBarHidden: false, isUsingBLE: false, isUsingNetwork: true)
-		setupCellModel()
+		//setupCellModel()
 	}
 
 	required init?(coder: NSCoder) {
@@ -30,6 +32,17 @@ class HistoryViewController: BaseViewController, UITableViewDelegate, UITableVie
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		setupNavigation(barTintColor: UIColor(named: "background_primary")!, textColor: .white)
+
+		let appDelegate = UIApplication.shared.delegate as? AppDelegate
+		let managedContext = appDelegate!.persistentContainer.viewContext
+		let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Visit")
+
+		do {
+			databaseContent = try managedContext.fetch(fetchRequest)
+			setupCellModel()
+		} catch let error as NSError {
+			print("Could not fetch. \(error), \(error.userInfo)")
+		}
 	}
 
 
@@ -37,9 +50,9 @@ class HistoryViewController: BaseViewController, UITableViewDelegate, UITableVie
 	private func setupCellModel() {
 		cellModels.removeAll()
 
-		cellModels.append(HistoryCellModel(roomTitle: "Room 1", startTime: "1.1.2020 11:15:00", endTime: "1.1.2020 12:00:00", duration: "45 min"))
-		cellModels.append(HistoryCellModel(roomTitle: "Room 3", startTime: "2.1.2020 11:15:00", endTime: "2.1.2020 12:00:00", duration: "45 min"))
-		cellModels.append(HistoryCellModel(roomTitle: "Room 44", startTime: "3.1.2020 11:15:00", endTime: "3.1.2020 12:00:00", duration: "45 min"))
+		for data in databaseContent {
+			cellModels.append(HistoryCellModel(roomTitle: data.value(forKey: "roomName") as? String ?? "", startTime: data.value(forKey: "startTime") as? String ?? "", endTime: data.value(forKey: "endTime") as? String ?? "", duration: data.value(forKey: "duration") as? String ?? ""))
+		}
 	}
 
 
@@ -50,7 +63,7 @@ class HistoryViewController: BaseViewController, UITableViewDelegate, UITableVie
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryCell") as! HistoryCell
-		let model = cellModels[indexPath.row] as! HistoryCellModel
+		let model = cellModels[cellModels.count - 1 - indexPath.row] as! HistoryCellModel
 		cell.setup(model)
 
 		return cell

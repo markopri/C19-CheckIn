@@ -4,8 +4,12 @@
 //
 //  Created by Marko Koprivnjak on 01/11/2020.
 //
+protocol CheckInViewControllerDelegate: class {
+	func goToHome()
+}
 
 import UIKit
+import CoreData
 
 class CheckInViewController: BaseViewController {
 	@IBOutlet weak var lblRoomName: UILabel!
@@ -13,6 +17,7 @@ class CheckInViewController: BaseViewController {
 	@IBOutlet weak var lblStartTime: UILabel!
 	@IBOutlet weak var btnCheckOut: UIButton!
 
+	weak var delegate: CheckInViewControllerDelegate?
 	var selectedDeviceName: String
 	var startTime: String
 	var timer: Timer?
@@ -56,7 +61,23 @@ class CheckInViewController: BaseViewController {
 	//MARK: Button actions
 	@IBAction func btnCheckOutTapped(_ sender: UIButton) {
 		timer?.invalidate()
-		//TODO: Save data into local database
+
+		let appDelegate = UIApplication.shared.delegate as? AppDelegate
+		let managedContext = appDelegate!.persistentContainer.viewContext
+		let entity = NSEntityDescription.entity(forEntityName: "Visit", in: managedContext)
+		let visit = NSManagedObject(entity: entity!, insertInto: managedContext)
+
+		visit.setValue(selectedDeviceName, forKey: "roomName")
+		visit.setValue(startTime, forKey: "startTime")
+		visit.setValue(Date().string(format: DateConstants.dateFormat), forKey: "endTime")
+		visit.setValue(lblDuration.text, forKey: "duration")
+
+		do {
+			try managedContext.save()
+			delegate?.goToHome()
+		} catch let error as NSError {
+			print("Could not save. \(error), \(error.userInfo)")
+		}
 	}
 
 

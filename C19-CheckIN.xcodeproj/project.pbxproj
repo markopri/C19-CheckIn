@@ -68,6 +68,7 @@
 		9285490C254F52D9001F2B68 /* HistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9285490A254F52D9001F2B68 /* HistoryCell.xib */; };
 		9285491A254FF678001F2B68 /* CoreBluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92854919254FF678001F2B68 /* CoreBluetoothManager.swift */; };
 		92AFB1552550278000BAB4F7 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92AFB1542550278000BAB4F7 /* Date.swift */; };
+		92AFB15B2550371200BAB4F7 /* C19-CheckIN.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 92AFB1592550371200BAB4F7 /* C19-CheckIN.xcdatamodeld */; };
 		D646C03D675309801D3E76E9 /* Pods_C19_CheckIN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 090637E86B859CDC101DFEF2 /* Pods_C19_CheckIN.framework */; };
 /* End PBXBuildFile section */
 
@@ -158,6 +159,7 @@
 		9285490A254F52D9001F2B68 /* HistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryCell.xib; sourceTree = "<group>"; };
 		92854919254FF678001F2B68 /* CoreBluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreBluetoothManager.swift; sourceTree = "<group>"; };
 		92AFB1542550278000BAB4F7 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		92AFB15A2550371200BAB4F7 /* C19-CheckIN.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "C19-CheckIN.xcdatamodel"; sourceTree = "<group>"; };
 		9585FAF8EA3AA2E25BF7BA6B /* Pods-C19-CheckIN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-C19-CheckIN.debug.xcconfig"; path = "Target Support Files/Pods-C19-CheckIN/Pods-C19-CheckIN.debug.xcconfig"; sourceTree = "<group>"; };
 		BB1072CF4C1B85B013077997 /* Pods-C19-CheckIN-C19-CheckINUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-C19-CheckIN-C19-CheckINUITests.release.xcconfig"; path = "Target Support Files/Pods-C19-CheckIN-C19-CheckINUITests/Pods-C19-CheckIN-C19-CheckINUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CE4302CDC7012C5CE65BC4E2 /* Pods-C19-CheckINTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-C19-CheckINTests.debug.xcconfig"; path = "Target Support Files/Pods-C19-CheckINTests/Pods-C19-CheckINTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 		921EBBAA254C115400B91740 = {
 			isa = PBXGroup;
 			children = (
+				92AFB1592550371200BAB4F7 /* C19-CheckIN.xcdatamodeld */,
 				921EBBB5254C115400B91740 /* C19-CheckIN */,
 				921EBBCC254C115600B91740 /* C19-CheckINTests */,
 				921EBBD7254C115600B91740 /* C19-CheckINUITests */,
@@ -957,6 +960,7 @@
 				9285486C254EEFC7001F2B68 /* RegistrationViewController.swift in Sources */,
 				921EBBB7254C115400B91740 /* AppDelegate.swift in Sources */,
 				921EBC17254C96DC00B91740 /* Constants.swift in Sources */,
+				92AFB15B2550371200BAB4F7 /* C19-CheckIN.xcdatamodeld in Sources */,
 				92854859254ED777001F2B68 /* LoginLogicController.swift in Sources */,
 				928548B6254F1F04001F2B68 /* SettingsViewController.swift in Sources */,
 				928548D0254F296A001F2B68 /* DeviceHomeCoordinator.swift in Sources */,
@@ -1305,6 +1309,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		92AFB1592550371200BAB4F7 /* C19-CheckIN.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				92AFB15A2550371200BAB4F7 /* C19-CheckIN.xcdatamodel */,
+			);
+			currentVersion = 92AFB15A2550371200BAB4F7 /* C19-CheckIN.xcdatamodel */;
+			path = "C19-CheckIN.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 921EBBAB254C115400B91740 /* Project object */;
 }
